@@ -1,9 +1,11 @@
 ## Currency Converter
 Description:
 I used the necessary possibility to moved from clean JS on React.js
+
+App calculates from PLN to one of 3 currencies. 
 Enjoy!
 
-[App](https://arkadiusz0809.github.io/currency-converter-react/)
+[App](https://arkadiusz0809.github.io/Currency-converter-single-select-react/)
 
 ## `technologies used in the project`
 
