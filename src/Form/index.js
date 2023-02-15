@@ -1,35 +1,19 @@
 import "./style.css";
 import { currencies } from '../currencies';
 import { Result } from "./Result";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
     const [amount, setAmount] = useState("");
-    const [time, setTime] = useState("");
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
     }
-
-    const myDate = new Date()
-
-    useEffect(() => {
-    const intervalId = setInterval (() => {
-    setTime(time => time + 0.1);
-    }, 1000);
     
-    return () => {
-    clearInterval(intervalId);
-    };
-    }, []);
-
     return (
         <form className="form" onSubmit={onFormSubmit}>
-            <span>      
-                Dzisiaj jest {myDate.toLocaleString("pl", {weekday: "long", day:"numeric", month: "long", year: "numeric"})}, {myDate.toLocaleTimeString({hour: "numeric", minute:"numeric", second:"numeric"})}
-            </span>
             <h1 className="form__header">
                 Currency converter
             </h1>
